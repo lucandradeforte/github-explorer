@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 import { RepositoryItem } from "./RepositoryItem";
 import "../styles/repositories.scss"
+import { IconGithubFill } from "../assets/icons/github-fill";
 
 interface Repository {
   name: string
   description: string
   html_url: string
+  stargazers_count: string
+  watchers_count: string
+  forks_count: string
 }
 
 export function RepositoryName() {
@@ -19,7 +23,7 @@ export function RepositoryName() {
 
   return (
     <section className="repository-list">
-      <h1>Lista de repositórios</h1>
+      <IconGithubFill color="#ffffff" size={36} />
 
       <ul>
         {repositories.map(repository => {
